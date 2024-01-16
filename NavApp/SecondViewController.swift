@@ -8,22 +8,19 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    // label for user
+    // child view for textField and button
+    // name textField
+    // lastname textField
+    // button
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Настройки"
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
