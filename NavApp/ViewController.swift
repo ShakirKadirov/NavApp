@@ -24,6 +24,20 @@ class ViewController: UIViewController {
         return image
     }()
     // name and lastname on one line
+    lazy var firstName: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.frame = CGRect(x: 31, y: profileImage.frame.origin.y + 110, width: 100, height: 19)
+        return label
+    }()
+    lazy var lastName: UILabel = {
+        let label = UILabel()
+        label.text = "Last name"
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.frame = CGRect(x: 135, y: 160, width: 100, height: 19)
+        return label
+    }()
     // button to open Setting page
     lazy var settingButton: UIButton = {
         let btn = UIButton(primaryAction: openSettings)
@@ -79,7 +93,10 @@ class ViewController: UIViewController {
         
         //add to super View
         view.addSubview(profileImage)
+        
+        view.addSubview(firstName)
         view.addSubview(friendView)
+        view.addSubview(lastName)
         view.addSubview(followingView)
         view.addSubview(favoritesView)
         view.addSubview(settingButton)
