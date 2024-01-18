@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     lazy var profileImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "mountainImage.jpg")
-//        image.frame = CGRect(x: 33 , y: 142, width: 100, height: 100)
+        image.frame = CGRect(x: 33 , y: 142, width: 100, height: 100)
         image.frame.size = CGSize(width: 100, height: 100)
-        image.frame.origin.x =  view.center.x
-        image.frame.origin.y = bigImage.frame.origin.y - 250
+        image.frame.origin.x =  bigImage.center.x - 50
+        image.frame.origin.y = followingView.center.y - 225
+//        image.frame = CGRect(x: view.frame.origin.x - 100, y: view.frame.origin.y - 100, width: 100, height: <#T##Int#>)
         image.layer.cornerRadius = image.frame.width / 2
         image.clipsToBounds = true
         return image
@@ -28,14 +29,14 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Name"
         label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.frame = CGRect(x: 31, y: profileImage.frame.origin.y + 110, width: 100, height: 19)
+        label.frame = CGRect(x: followingView.frame.origin.x , y: profileImage.frame.origin.y + 110, width: 100, height: 19)
         return label
     }()
     lazy var lastName: UILabel = {
         let label = UILabel()
         label.text = "Last name"
         label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.frame = CGRect(x: 135, y: 160, width: 100, height: 19)
+        label.frame = CGRect(x: followingView.frame.origin.x + 50, y: profileImage.frame.origin.y + 110, width: 100, height: 19)
         return label
     }()
     // button to open Setting page
@@ -44,8 +45,9 @@ class ViewController: UIViewController {
         btn.setTitle("Настройки", for: .normal)
         btn.setTitleColor(.systemBlue, for: .normal)
 //        btn.frame = CGRect(x: 100, y: bigImage.frame.origin.y + 70, width: 100, height: 19)
-        btn.frame.size = CGSize(width: 100, height: 19)
-        btn.frame.origin = CGPoint(x: followingView.center.x / 2 + 50, y: followingView.frame.origin.y - 100 )
+//        btn.frame.size = CGSize(width: 100, height: 19)
+//        btn.frame.origin = CGPoint(x: followingView.center.x / 2 + 50, y: followingView.frame.origin.y - 100 )
+        btn.frame = CGRect(x: followingView.frame.origin.x + 30 , y: followingView.frame.origin.y - 30, width: 100, height: 19)
         return btn
     }()
     // action
